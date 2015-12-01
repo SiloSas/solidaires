@@ -1,0 +1,26 @@
+<div ng-controller="orbitCtrl" ng-if="unes.length > 0">
+    <ul class="example-orbit-content paddingBottom30" data-orbit>
+        <li data-orbit-slide="headline-2" class="sliderUne zIndex2"
+            ng-repeat="une in unes"
+            style="background-image: url('{{une.img}}')">
+            <div class="column large-5 medium-7 uneContentBg  absolute right"></div>
+            <div class="column large-5 medium-7 uneContentContener">
+                <h1><a href="#/article/{{une.url}}">{{une.title}}</a></h1>
+                <b data-ng-bind-html="une.content | limitTo: 300" class="text-justify"></b>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="paddingBottom20 float-left column large-12 paddingLeft0">
+    <ng-pub class="column large-3 medium-4 small-12 float-left paddingTop20 paddingRight0 float-right"
+            ng-if="showPub"></ng-pub>
+    <div class="column large-3 medium-4 small-12 float-left paddingTop20 ng-articles float-left"
+         ng-repeat="article in filterArt = (articles | filter: $root.research | limitTo: limit)">
+    </div>
+    <div class="column large-12 paddingTop20">
+        <div class="column medium-4 medium-offset-4 button"
+             ng-show="filterArt.length >= limit"
+             ng-click="limit = limit + 8">Plus d'articles</div>
+    </div>
+    <div class="column medium-8" ng-if="filterArt.length == 0">Aucun article trouvé pour '{{$root.research}}'</div>
+</div>

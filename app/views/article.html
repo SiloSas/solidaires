@@ -1,0 +1,22 @@
+<div class="parallax-background absolute top0"
+     style="height: 400px; background-image: url('{{article.img}}')"
+     ng-if="article.img != undefined">
+</div>
+<div class="parallax-content white column articleContent"
+     ng-class="{'margin0': article.img === undefined}"
+     ng-if="article.title != undefined && article.content != undefined">
+    <!--<div class="column medium-4 float-right animated" id="shareBtnsTop">
+        <a class="button float-right" href="">
+            <i class="fi-social-facebook" style="font-size: 40px;"></i>
+            <b class="float-right margin10">partager</b>
+        </a>
+    </div>-->
+    <h1 class="column medium-8">{{article.title}}</h1>
+    <div class="column large-12 paddingTop20" data-ng-bind-html="article.content"></div>
+    <!--<div class="column medium-4 float-right animated" id="shareBtnsBottom">
+        <a class="button float-right" href="">
+            <i class="fi-social-facebook" style="font-size: 40px;"></i>
+            <b class="float-right margin10">partager</b>
+        </a>
+    </div>-->
+</div>

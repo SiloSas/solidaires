@@ -1,0 +1,35 @@
+<a class="float-right" ng-click="cancel()">&times;</a>
+<map zoom="15"
+     ng-if="!open"
+     center="[48.7968284, 2.4469996]"
+     scrollwheel="false"
+     navigationControl="false"
+     mapTypeControl="false"
+     scaleControl="false"
+     style="height: 400px!important;"
+     class=" right left width100p zIndex1">
+    <info-window id="info" position="48.7968284, 2.4469996" visible-on-marker="contact">
+        <div ng-non-bindable class="width100p zIndex4 column" id="contactForm">
+            <h4 class="width100p text-center">Contactez-nous</h4>
+            <div class="column">
+                <h6 style="cursor: pointer; color: #008CBA;" ng-click="$parent.open = !$parent.open">Nous ecrire</h6>
+            </div>
+            <div ng-show="!open">
+                <div class="column">
+                    <h6 class="float-left">Tel : </h6> <p class="float-left">01 41 78 92 60</p><br><br>
+                </div>
+                <div class="width100p">
+                    <p class="width100p text-center">5-7, rue Georges-Enesco 94026 Créteil Cedex</p>
+                </div>
+            </div>
+        </div>
+    </info-window>
+    <marker id="contact" on-click="showInfoWindow(event, 'info')" position="48.7968284, 2.4469996">
+    </marker>
+</map>
+<form ng-show="open" name="contactform" ng-submit="submit(contactform)">
+    <input type="email" ng-model="formData.inputEmail" id="inputEmail" name="inputEmail" placeholder="Email" required>
+    <textarea ng-model="formData.inputMessage" id="inputMessage" class="fade" ng-minlength="10" required></textarea>
+    <button type="submit" ng-click="submit()" class="btn btn-default btncontact" ng-disabled="submitButtonDisabled">Envoyer</button>
+    <button ng-click="open = !open">Annuler</button>
+</form>

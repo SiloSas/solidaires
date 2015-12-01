@@ -1,0 +1,160 @@
+// bower:scss
+// endbower
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+html, body {height: 100%;}
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+html {overflow: hidden}
+.footer {
+  height: 120px;
+  position: relative;
+  width: 100%;
+  float: left;
+  background-color: black;
+  color: #ffffff;
+}
+.footer > div > a {
+  color: #ffffff;
+}
+.footer > div >a:hover {
+  color: #007095;
+}
+.container {overflow: hidden; position: relative; width: 100%; float: left;}
+.sliderUne {background-size: 100%; min-height: 100%}
+.min-art {box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);}
+ng-pub > div {box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);}
+.min-art > a > img {
+  position: absolute;
+  filter: sepia(1);
+  -webkit-filter: sepia(1);
+  -moz-filter: sepia(1);
+  -o-filter: sepia(1);
+  -ms-filter: sepia(1);
+}
+.articleContent a:has(> img) {
+  float: left;
+}
+.min-art:hover > a > img {
+  filter: sepia(0);
+  -webkit-filter: sepia(0);
+  -moz-filter: sepia(0);
+  -o-filter: sepia(0);
+  -ms-filter: sepia(0);
+}
+.min-art > div > h3 > a {
+  text-shadow: rgba(0, 0, 0, 0.4) 2px 1px 3px;
+}
+.ng-articles {
+  overflow: hidden;
+}
+.general-contain {overflow-y: auto;}
+.uneContentContener {color: #ffffff;}
+.uneContentBg {background-color: rgba(0, 0, 0, 0.75); height: 100%;}
+.parallax-background {
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: static;
+  width: 100%;
+}
+.parallax-content {
+  max-width: 100%;
+  position: absolute;
+  padding: 20px;
+  background-color: #fff;
+}
+/* Custom page header */
+.sectionTop > a{
+  background: #333333;
+  font-size: 17px!important;
+  font-weight: bold;
+  transition: background 0.5s;
+}
+.sectionTop:hover > a {
+  background: #00ADEC!important;
+  transition: background 0s
+}
+.sectionTop:hover {
+  background: #00ADEC!important;
+}
+.sectionTop:hover {
+  background: #333333;
+}
+.header {
+  border-bottom: 1px solid #e5e5e5;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+/* Custom page footer */
+.footer {
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}

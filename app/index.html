@@ -1,0 +1,166 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/foundation.css">
+    <link rel="stylesheet" href="styles/foundation-icons.css">
+    <link rel="stylesheet" href="styles/tools.css">
+    <link rel="stylesheet" href="styles/animate.min.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="solidairesApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="zIndex5 top0 width100p white" id="top" ng-controller="topCtrl">
+        <div>
+            <top-bar class="zIndex5">
+                <ul class="title-area" style="min-width: 10%">
+                    <li class="name" ng-if="$root.window != 'large'">
+                        <h1><a href="#/">Solidaires</a></h1>
+                    </li>
+                    <a href="#/" ng-if="$root.window == 'large'">
+                        <li class="name"
+                            style="background-image: url('../images/logo.png');
+                            background-size: 100%">
+                        </li>
+                    </a>
+                    <li toggle-top-bar class="menu-icon"><a>Menu</a></li>
+                </ul>
+                <top-bar-section>
+                    <!-- Right Nav Section -->
+                    <ul class="right">
+                        <li ng-controller="searchCtrl">
+                            <form ng-submit="search(searchPattern)">
+                                <li>
+                                    <input type="text" placeholder="Recherche" ng-model="searchPattern">
+                                </li>
+                                <li>
+                                    <input type="submit" value="Rechercher" class="button marginRight10">
+                                </li>
+                            </form>
+                        </li>
+                        <!--<li>
+                            <a>Suivez-nous</a>
+                        </li>
+                        <li>
+                            <a><i class="fi-social-facebook"
+                                  style="font-size: 25px; line-height:15px; vertical-align: text-bottom"></i></a>
+                        </li>
+                        <li>
+                            <a><i class="fi-social-twitter"
+                                  style="font-size: 25px; line-height:15px; vertical-align: text-bottom"></i></a>
+                        </li>-->
+                    </ul>
+
+                    <!-- Left Nav Section -->
+                    <ul class="left">
+                        <li ng-class="{'active': path == 'PEPenmouvement'}" class="sectionTop">
+                            <a href="#/rubrique/PEPenmouvement">
+                                PEP en mouvement
+                            </a>
+                        </li>
+                        <li ng-class="{'active': path == 'sengager'}" class="sectionTop">
+                            <a href="#/rubrique/sengager">
+                                S’engager
+                            </a>
+                        </li>
+                        <li ng-class="{'active': path == 'innovationSociale'}" class="sectionTop">
+                            <a href="#/rubrique/innovationSociale">
+                                Innovation sociale
+                            </a>
+                        </li>
+                        <li ng-class="{'active': path == 'questionsDeSens'}" class="sectionTop">
+                            <a href="#/rubrique/questionsDeSens">
+                                Questions de sens
+                            </a>
+                        </li>
+                        <li ng-class="{'active': path == 'debats'}" class="sectionTop">
+                            <a href="#/rubrique/debats">
+                                Les débats
+                            </a>
+                        </li>
+                    </ul>
+                </top-bar-section>
+            </top-bar>
+        </div>
+        <div>
+            <div class="primCol width100p">
+                <div id="newsContener" class="animated paddingLeft20" ng-show="news.length > 0" style="white-space: nowrap;">
+                        <b>{{newsActive.title}}</b> : <span ng-bind-html="newsActive.content"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="general-contain width100p">
+        <div class="container zIndex1">
+          <div ng-view="" autoscroll="true"></div>
+        </div>
+        <div class="footer zIndex2 paddingTop10" ng-controller="footerCtrl">
+            <div class="column large-12">
+                <a ng-click="open()" class="float-right">Contacts</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/jquery-1.11.0.js"></script>
+        <script src="scripts/mm-foundation.min.js"></script>
+        <script src="scripts/gmap.js"></script>
+        <script src="scripts/ng-map.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/services/article.js"></script>
+        <script src="scripts/directives/directives.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/search.js"></script>
+        <script src="scripts/controllers/orbitCtrl.js"></script>
+        <script src="scripts/controllers/article.js"></script>
+        <script src="scripts/controllers/top.js"></script>
+        <script src="scripts/controllers/footer.js"></script>
+        <script src="scripts/controllers/section.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
